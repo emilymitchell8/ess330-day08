@@ -28,9 +28,8 @@ plot <- ggplot(covid_long, aes(x = date, y = count, color = metric)) +
   facet_grid(region ~ metric, scales = 'free_y') +
   labs(title = 'Cumulative COVID-19 Cases and Deaths by USA Region',
        x = 'Date', y = 'Count', color = 'Metric') +
-  theme_minimal()
-
+  theme_bw()
 
 print(plot)
 
-
+ggsave("img/plot.png", plot = plot, width = 8, height = 6, dpi = 300)
